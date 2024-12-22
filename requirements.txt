@@ -1,0 +1,4 @@
+TTS
+soundfile
+librosa==0.10.2
+openai-whisper
