@@ -40,6 +40,7 @@ def process_tts(text, output_path, speaker_path=None, language='en',effect=None,
             manipulate_audio(temp_path, output_path, effect, effect_level)
             print(f"Effect applied and audio saved to: {output_path}")
         else:
+            os.rename(temp_path, output_path)
             print(f"Audio saved to: {output_path}")
 
     except Exception as e:
