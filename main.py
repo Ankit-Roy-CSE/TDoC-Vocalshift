@@ -1,8 +1,8 @@
 import argparse
 import os
-from TTS.TTS.api import TTS
+from TTS.api import TTS
 from pathlib import Path
-from voice_manipulator import manipulate_audio
+from voice_manipulator import audio_manipulator
 
 def create_tts_cli():
     parser = argparse.ArgumentParser(description='Text to Speech CLI Tool')
@@ -37,7 +37,7 @@ def process_tts(text, output_path, speaker_path=None, language='en',effect=None,
 
         if effect:
             print(f"Applying effect: {effect} with level: {effect_level}")
-            manipulate_audio(temp_path, output_path, effect, effect_level)
+            audio_manipulator(temp_path, output_path, effect, effect_level)
             print(f"Effect applied and audio saved to: {output_path}")
         else:
             os.rename(temp_path, output_path)
